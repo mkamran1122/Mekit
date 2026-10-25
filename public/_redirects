@@ -1,6 +1,11 @@
-# Serve static XML sitemap and robots.txt directly
-/robots.txt    /robots.txt    200
-/sitemap.xml   /sitemap.xml   200
-
-# SPA catch-all fallback for client-side routing on Netlify
-/*             /index.html    200
+# Cloudflare Pages Redirects configuration for Mekit.online
+#
+# Static assets (robots.txt, sitemap.xml, assets/*) are automatically served directly
+# by Cloudflare Pages edge without requiring explicit redirect rules.
+#
+# Single-Page Application (SPA) routing is handled natively by Cloudflare Pages:
+# When no custom 404.html is present (or when 200.html exists), Cloudflare Pages
+# automatically serves the application for all client-side routes with a 200 OK.
+#
+# Do NOT add '/* /index.html 200' here: Cloudflare Pages automatically normalizes clean URLs
+# by stripping .html extensions, which triggers validator error [code: 100324] (Infinite loop detected).
