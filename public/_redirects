@@ -1,0 +1,6 @@
+# Serve static XML sitemap and robots.txt directly
+/robots.txt    /robots.txt    200
+/sitemap.xml   /sitemap.xml   200
+
+# SPA catch-all fallback for client-side routing on Netlify
+/*             /index.html    200

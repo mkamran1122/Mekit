@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "User": {
+      "path": "users/{userId}",
+      "description": "User profile records",
+      "fields": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "photoURL": { "type": "string", "description": "Avatar image URL" },
+        "createdAt": { "type": "string", "description": "Account registration timestamp" },
+        "updatedAt": { "type": "string", "description": "Last update timestamp" }
+      }
+    },
+    "UserPreset": {
+      "path": "users/{userId}/presets/{presetId}",
+      "description": "Saved compression and resizing presets for rapid batch workflows",
+      "fields": {
+        "id": { "type": "string", "description": "Unique preset ID" },
+        "userId": { "type": "string", "description": "Owner user UID" },
+        "title": { "type": "string", "description": "Name of the preset" },
+        "mode": { "type": "string", "description": "Optimization mode: compress, resize, or convert" },
+        "quality": { "type": "number", "description": "Compression quality percentage from 1 to 100" },
+        "targetSizeKb": { "type": "number", "description": "Optional target file size in KB" },
+        "width": { "type": "number", "description": "Optional width in pixels" },
+        "height": { "type": "number", "description": "Optional height in pixels" },
+        "format": { "type": "string", "description": "Target image format: original, jpeg, png, webp, avif" },
+        "maintainAspectRatio": { "type": "boolean", "description": "Whether to preserve aspect ratio" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "description": "Last update timestamp" }
+      }
+    },
+    "ProcessingLog": {
+      "path": "users/{userId}/history/{historyId}",
+      "description": "Client-side image processing statistics and history logs (no image binaries, strictly privacy-preserving metadata)",
+      "fields": {
+        "id": { "type": "string", "description": "History log entry ID" },
+        "userId": { "type": "string", "description": "Owner user UID" },
+        "fileName": { "type": "string", "description": "Name of processed file" },
+        "tool": { "type": "string", "description": "Tool used: compressor, resizer, converter" },
+        "originalBytes": { "type": "number", "description": "Original file size in bytes" },
+        "compressedBytes": { "type": "number", "description": "Resulting file size in bytes" },
+        "savingsPercent": { "type": "number", "description": "Compression percentage savings" },
+        "format": { "type": "string", "description": "Resulting file format" },
+        "timestamp": { "type": "string", "description": "Processing event timestamp" }
+      }
+    },
+    "ContactMessage": {
+      "path": "contact_messages/{messageId}",
+      "description": "Contact form submissions and feedback",
+      "fields": {
+        "id": { "type": "string", "description": "Message ID" },
+        "name": { "type": "string", "description": "Sender name" },
+        "email": { "type": "string", "description": "Sender email" },
+        "subject": { "type": "string", "description": "Message subject" },
+        "message": { "type": "string", "description": "Message content" },
+        "createdAt": { "type": "string", "description": "Submission timestamp" }
+      }
+    }
+  }
+}

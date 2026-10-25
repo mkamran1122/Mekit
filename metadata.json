@@ -1,0 +1,8 @@
+{
+  "name": "mekit -First Free Image Compressor & Resizer",
+  "description": "Compress, resize, and convert images locally in your browser. Hit exact KB limits for forms, convert formats, and batch process without uploads or watermarks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
